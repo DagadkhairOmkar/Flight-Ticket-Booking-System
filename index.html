@@ -5,458 +5,490 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Flight Reservation System</title>
+    <title>SkyBook - Flight Reservation System</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- NAVBAR -->
 
-<header>
+    <nav class="navbar">
 
-    <div class="logo">
-        ✈️ Flight Reservation System
-    </div>
+        <div class="logo">
+            ✈️ SkyBook
+        </div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#flights">Flights</a>
-        <a href="#booking">Book Ticket</a>
-        <a href="#reservations">My Reservations</a>
-        <a href="#admin">Admin</a>
-        <a href="#dsa">DSA</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#booking">Book Ticket</a>
+            <a href="#ticket">My Ticket</a>
+            <a href="#history">Bookings</a>
+        </div>
+
     </nav>
 
-</header>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">SMART • FAST • SECURE</p>
+
+            <h1>
+                Your Journey<br>
+                Starts With <span>SkyBook</span>
+            </h1>
+
+            <p>
+                Simple and professional flight reservation system
+                for quick and secure ticket booking.
+            </p>
+
+            <a href="#booking">
+                <button class="primary-btn">
+                    Book Your Flight ✈️
+                </button>
+            </a>
+
+        </div>
+
+        <div class="hero-plane">
+            ✈️
+        </div>
+
+    </section>
 
 
-<!-- ================= HOME ================= -->
+    <!-- BOOKING SECTION -->
 
-<section id="home" class="hero">
+    <section class="booking-section" id="booking">
 
-    <div>
+        <div class="section-title">
 
-        <h1>Book Your Flight</h1>
+            <p>FLIGHT RESERVATION</p>
+
+            <h2>Book Your Flight</h2>
+
+            <span>
+                Enter passenger details and travel information
+            </span>
+
+        </div>
+
+
+        <div class="booking-card">
+
+            <form id="bookingForm">
+
+                <div class="form-grid">
+
+
+                    <!-- Passenger Name -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Passenger Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="passengerName"
+                            placeholder="Enter full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Age -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Passenger Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="passengerAge"
+                            placeholder="Enter age"
+                            min="1"
+                            max="120"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Mobile -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="10 digit mobile number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Flight -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Select Flight
+                        </label>
+
+                        <select id="flight" required>
+
+                            <option value="">
+                                Select Flight
+                            </option>
+
+                            <option value="SK101">
+                                SK101 - Mumbai → Delhi
+                            </option>
+
+                            <option value="SK202">
+                                SK202 - Pune → Bangalore
+                            </option>
+
+                            <option value="SK303">
+                                SK303 - Mumbai → Goa
+                            </option>
+
+                            <option value="SK404">
+                                SK404 - Pune → Hyderabad
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Destination -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Destination
+                        </label>
+
+                        <select id="destination" required>
+
+                            <option value="">
+                                Select Destination
+                            </option>
+
+                            <option>Mumbai</option>
+                            <option>Delhi</option>
+                            <option>Pune</option>
+                            <option>Bangalore</option>
+                            <option>Goa</option>
+                            <option>Hyderabad</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Date -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Travel Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Time -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Travel Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="travelTime"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Seat -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Seat Preference
+                        </label>
+
+                        <select id="seat">
+
+                            <option value="Window">
+                                Window Seat
+                            </option>
+
+                            <option value="Aisle">
+                                Aisle Seat
+                            </option>
+
+                            <option value="Middle">
+                                Middle Seat
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Fare -->
+
+                <div class="fare-box">
+
+                    <span>Estimated Fare</span>
+
+                    <strong>
+                        ₹ <span id="fare">4500</span>
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="book-btn"
+                >
+                    🎫 Book Flight
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUCCESS MESSAGE -->
+
+    <section
+        class="success-section"
+        id="ticket"
+        style="display:none;"
+    >
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            Ticket Booked Successfully!
+        </h2>
 
         <p>
-            Fast, Simple and Smart Flight Reservation System
+            Your flight reservation has been confirmed.
         </p>
 
-        <a href="#booking">
-            <button>🎫 Book Your Ticket</button>
-        </a>
 
-    </div>
+        <!-- GENERATED TICKET -->
 
-</section>
+        <div class="ticket-card" id="printTicket">
 
+            <div class="ticket-header">
 
-<!-- ================= SEARCH FLIGHT ================= -->
+                <div>
+                    <h2>✈️ SkyBook</h2>
+                    <small>Flight Reservation</small>
+                </div>
 
-<section class="section">
+                <div class="status">
+                    CONFIRMED
+                </div>
 
-    <h2>🔍 Search Flight</h2>
-
-    <div class="search-box">
-
-        <input
-            type="text"
-            id="searchDestination"
-            placeholder="Enter destination"
-        >
-
-        <input
-            type="date"
-            id="searchDate"
-        >
-
-        <button onclick="searchFlights()">
-            Search Flight
-        </button>
-
-        <button onclick="showAllFlights()">
-            Show All
-        </button>
-
-    </div>
-
-</section>
+            </div>
 
 
-<!-- ================= AVAILABLE FLIGHTS ================= -->
+            <div class="token">
 
-<section id="flights" class="section">
+                <span>Token Number</span>
 
-    <h2>✈️ Available Flights</h2>
+                <strong id="ticketToken">
+                    --
+                </strong>
 
-    <div class="sort-buttons">
-
-        <button onclick="sortByPrice()">
-            Sort by Price
-        </button>
-
-        <button onclick="sortBySeats()">
-            Sort by Seats
-        </button>
-
-    </div>
-
-    <div id="flightList"></div>
-
-</section>
+            </div>
 
 
-<!-- ================= BOOKING ================= -->
+            <div class="ticket-grid">
 
-<section id="booking" class="section">
+                <div>
+                    <small>Passenger</small>
+                    <strong id="ticketName">--</strong>
+                </div>
 
-    <h2>🎫 Passenger Reservation</h2>
+                <div>
+                    <small>Age</small>
+                    <strong id="ticketAge">--</strong>
+                </div>
 
-    <form id="bookingForm">
+                <div>
+                    <small>Mobile</small>
+                    <strong id="ticketMobile">--</strong>
+                </div>
 
-        <div class="form-group">
+                <div>
+                    <small>Flight</small>
+                    <strong id="ticketFlight">--</strong>
+                </div>
 
-            <label>Passenger Name</label>
+                <div>
+                    <small>Destination</small>
+                    <strong id="ticketDestination">--</strong>
+                </div>
+
+                <div>
+                    <small>Date</small>
+                    <strong id="ticketDate">--</strong>
+                </div>
+
+                <div>
+                    <small>Time</small>
+                    <strong id="ticketTime">--</strong>
+                </div>
+
+                <div>
+                    <small>Seat</small>
+                    <strong id="ticketSeat">--</strong>
+                </div>
+
+                <div>
+                    <small>Fare</small>
+                    <strong>
+                        ₹<span id="ticketFare">--</span>
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="ticket-footer">
+
+                <span>
+                    Please arrive at the airport 2 hours before departure.
+                </span>
+
+                <span>
+                    ✈️ Have a safe journey!
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="ticket-buttons">
+
+            <button onclick="printTicket()">
+                🖨️ Print Ticket
+            </button>
+
+            <button onclick="newBooking()">
+                + New Booking
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING HISTORY -->
+
+    <section class="history" id="history">
+
+        <div class="section-title">
+
+            <p>BOOKING MANAGEMENT</p>
+
+            <h2>Booking History</h2>
+
+        </div>
+
+
+        <div class="search-box">
 
             <input
                 type="text"
-                id="passengerName"
-                placeholder="Enter passenger name"
-                required
+                id="searchToken"
+                placeholder="Search by Token Number"
             >
 
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Passenger Age</label>
-
-            <input
-                type="number"
-                id="passengerAge"
-                min="1"
-                max="120"
-                placeholder="Enter age"
-                required
-            >
+            <button onclick="searchBooking()">
+                Search
+            </button>
 
         </div>
 
 
-        <div class="form-group">
+        <div id="bookingHistory">
 
-            <label>Passenger Mobile No.</label>
-
-            <input
-                type="tel"
-                id="passengerMobile"
-                maxlength="10"
-                placeholder="Enter 10 digit mobile number"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Destination</label>
-
-            <select id="destination" required>
-
-                <option value="">
-                    Select Destination
-                </option>
-
-                <option value="Mumbai">
-                    Mumbai
-                </option>
-
-                <option value="Delhi">
-                    Delhi
-                </option>
-
-                <option value="Pune">
-                    Pune
-                </option>
-
-                <option value="Bangalore">
-                    Bangalore
-                </option>
-
-                <option value="Hyderabad">
-                    Hyderabad
-                </option>
-
-                <option value="Chennai">
-                    Chennai
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Journey Date</label>
-
-            <input
-                type="date"
-                id="journeyDate"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Journey Time</label>
-
-            <input
-                type="time"
-                id="journeyTime"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Select Flight</label>
-
-            <select id="flightNumber" required>
-
-                <option value="">
-                    Select Flight
-                </option>
-
-                <option value="101">
-                    FL101 - Mumbai
-                </option>
-
-                <option value="102">
-                    FL102 - Delhi
-                </option>
-
-                <option value="103">
-                    FL103 - Pune
-                </option>
-
-                <option value="104">
-                    FL104 - Bangalore
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Token No.</label>
-
-            <input
-                type="text"
-                id="token"
-                value="Generated After Booking"
-                readonly
-            >
-
-        </div>
-
-
-        <button type="submit" class="book-button">
-
-            🎫 Confirm Reservation
-
-        </button>
-
-    </form>
-
-</section>
-
-
-<!-- ================= BOOKING MESSAGE ================= -->
-
-<div id="message"></div>
-
-
-<!-- ================= MY RESERVATIONS ================= -->
-
-<section id="reservations" class="section">
-
-    <h2>📋 My Reservations</h2>
-
-    <div id="reservationList">
-
-        <p>No reservations yet.</p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= WAITING LIST ================= -->
-
-<section class="section">
-
-    <h2>👥 Waiting List - Queue</h2>
-
-    <p>
-        If all seats are booked, passengers will be added
-        to the waiting queue using FIFO concept.
-    </p>
-
-    <div id="waitingList">
-
-        <p>No passengers in waiting list.</p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ADMIN ================= -->
-
-<section id="admin" class="section admin-section">
-
-    <h2>🔐 Admin Dashboard</h2>
-
-    <div class="dashboard">
-
-        <div class="dashboard-card">
-
-            <h3 id="totalFlights">0</h3>
-
-            <p>Total Flights</p>
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-            <h3 id="totalBookings">0</h3>
-
-            <p>Total Reservations</p>
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-            <h3 id="availableSeats">0</h3>
-
-            <p>Available Seats</p>
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-            <h3 id="waitingPassengers">0</h3>
-
-            <p>Waiting Passengers</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= DSA ================= -->
-
-<section id="dsa" class="section">
-
-    <h2>📚 Data Structures Used</h2>
-
-    <div class="dsa-container">
-
-        <div class="dsa-card">
-
-            <h3>1. List</h3>
-
-            <p>
-                Used to store and display flight information.
+            <p class="empty">
+                No booking available.
             </p>
 
         </div>
 
-
-        <div class="dsa-card">
-
-            <h3>2. Dictionary</h3>
-
-            <p>
-                Used to store passenger and flight details.
-            </p>
-
-        </div>
+    </section>
 
 
-        <div class="dsa-card">
+    <!-- FOOTER -->
 
-            <h3>3. Queue</h3>
+    <footer>
 
-            <p>
-                Waiting passengers are managed using
-                FIFO Queue.
-            </p>
+        <h3>✈️ SkyBook</h3>
 
-        </div>
+        <p>
+            Smart Flight Reservation System
+        </p>
 
+        <p>
+            Created by: <b>Omkar Dagadkhair</b>
+        </p>
 
-        <div class="dsa-card">
+        <p>
+            SE A 31
+        </p>
 
-            <h3>4. Searching</h3>
-
-            <p>
-                Used to search flights by destination.
-            </p>
-
-        </div>
+    </footer>
 
 
-        <div class="dsa-card">
-
-            <h3>5. Sorting</h3>
-
-            <p>
-                Flights can be sorted according to
-                price and available seats.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <h3>✈️ Flight Reservation System</h3>
-
-    <p>
-        DSA Mini Project
-    </p>
-
-    <p>
-        Created by: Omkar Dagadkhair | SE A 31
-    </p>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
