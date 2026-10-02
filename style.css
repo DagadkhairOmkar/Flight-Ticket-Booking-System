@@ -1,0 +1,470 @@
+/* ================= GENERAL ================= */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f7fc;
+
+    color: #222;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background: #0b4f8a;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    margin-left: 20px;
+
+    font-size: 15px;
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 450px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 50, 100, 0.75),
+            rgba(0, 50, 100, 0.75)
+        ),
+        url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+
+.hero h1 {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.hero p {
+    font-size: 20px;
+}
+
+
+button {
+    background: #0b72ce;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+button:hover {
+    background: #063f70;
+}
+
+
+/* ================= SECTION ================= */
+
+.section {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 35px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+.section h2 {
+    color: #0b4f8a;
+
+    margin-top: 0;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.search-box input {
+    flex: 1;
+
+    min-width: 200px;
+}
+
+
+/* ================= INPUT ================= */
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+
+/* ================= FLIGHTS ================= */
+
+#flightList {
+    margin-top: 20px;
+}
+
+
+.flight-card {
+    border: 1px solid #ddd;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    background: #f8fbff;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+.flight-card h3 {
+    color: #0b4f8a;
+}
+
+
+.available {
+    color: green;
+
+    font-weight: bold;
+}
+
+
+.full {
+    color: red;
+
+    font-weight: bold;
+}
+
+
+.sort-buttons {
+    margin-bottom: 15px;
+}
+
+
+/* ================= FORM ================= */
+
+#bookingForm {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.book-button {
+    width: 100%;
+
+    font-size: 17px;
+
+    padding: 15px;
+}
+
+
+/* ================= MESSAGE ================= */
+
+#message {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 20px auto;
+}
+
+
+.success {
+    background: #d4edda;
+
+    color: #155724;
+
+    padding: 15px;
+
+    border-radius: 6px;
+}
+
+
+.error {
+    background: #f8d7da;
+
+    color: #721c24;
+
+    padding: 15px;
+
+    border-radius: 6px;
+}
+
+
+/* ================= RESERVATION ================= */
+
+.reservation-card {
+    border-left: 5px solid #0b72ce;
+
+    background: #f4f9ff;
+
+    padding: 18px;
+
+    margin: 15px 0;
+
+    border-radius: 6px;
+}
+
+
+.cancel-button {
+    background: #d32f2f;
+}
+
+
+.cancel-button:hover {
+    background: #9a0000;
+}
+
+
+/* ================= WAITING LIST ================= */
+
+.waiting-card {
+    background: #fff8e1;
+
+    padding: 15px;
+
+    margin: 10px 0;
+
+    border-left: 5px solid #ff9800;
+
+    border-radius: 6px;
+}
+
+
+/* ================= ADMIN ================= */
+
+.admin-section {
+    background: #eef5ff;
+}
+
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.dashboard-card {
+    background: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+.dashboard-card h3 {
+    font-size: 30px;
+
+    color: #0b4f8a;
+
+    margin: 5px;
+}
+
+
+/* ================= DSA ================= */
+
+.dsa-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.dsa-card {
+    padding: 20px;
+
+    background: #f4f8ff;
+
+    border-radius: 8px;
+
+    border-top: 4px solid #0b72ce;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #082f50;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    margin-top: 50px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    nav a {
+        margin: 5px;
+
+        display: inline-block;
+    }
+
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+
+    .dashboard {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .dsa-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+}
